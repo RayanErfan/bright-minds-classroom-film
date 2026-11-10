@@ -13,7 +13,7 @@ let lastFrame=0,frameRequest=0,exportTimer=0,recorder,recordCanvas,recordContext
 const sound=createAudio();
 function toast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3800);}
 function createChapters(){
- $('#chapters').innerHTML=CHAPTERS.map((c,i)=>`<button class="chapter${i===0?' active':''}" data-chapter="${i}" aria-label="فصل ${fa(i+1)}: ${c.title}" aria-pressed="${i===0}"><span class="chapter-image"><img src="/thumbnails/chapter-${i+1}.jpg" alt="${c.title}" id="thumb-${i}"/><span class="chapter-numeral">${fa(i+1,2)}</span><span class="chapter-time">${formatTime(c.start)}</span></span><span class="chapter-title">${c.title}</span><span class="chapter-subtitle">${c.short}</span></button>`).join('');
+ $('#chapters').innerHTML=CHAPTERS.map((c,i)=>`<button class="chapter${i===0?' active':''}" data-chapter="${i}" aria-label="فصل ${fa(i+1)}: ${c.title}" aria-pressed="${i===0}"><span class="chapter-image"><img src="./thumbnails/chapter-${i+1}.jpg" alt="${c.title}" id="thumb-${i}"/><span class="chapter-numeral">${fa(i+1,2)}</span><span class="chapter-time">${formatTime(c.start)}</span></span><span class="chapter-title">${c.title}</span><span class="chapter-subtitle">${c.short}</span></button>`).join('');
  document.querySelectorAll('[data-chapter]').forEach(b=>b.addEventListener('click',()=>{if(state.exporting)return;setMode('film');seek(CHAPTERS[Number(b.dataset.chapter)].start);setPlaying(true);}));
  $('.timeline-markers').innerHTML=CHAPTERS.slice(1).map(c=>`<i style="left:${c.start/DURATION*100}%"></i>`).join('');
 }

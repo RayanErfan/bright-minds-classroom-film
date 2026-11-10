@@ -1,7 +1,7 @@
 // Bundled audio gives every browser the same two Iranian Persian voices.
 // This source also routes the complete soundtrack into recorded video exports.
 export function createAudio(){
- const media=new Audio('/audio/classroom-fa.mp3');media.preload='auto';media.preservesPitch=true;
+ const media=new Audio(new URL('../audio/classroom-fa.mp3',import.meta.url).href);media.preload='auto';media.preservesPitch=true;
  let ctx,bus,destination,enabled=true,unlocked=false,playRequest=0,desiredTime=0,desiredSpeed=1;
  function init(){
   if(ctx)return;ctx=new AudioContext();bus=ctx.createGain();destination=ctx.createMediaStreamDestination();
