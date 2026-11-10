@@ -26,6 +26,10 @@
 
 ## تماشا
 
+**آنلاین:** <https://rayanerfan.github.io/bright-minds-classroom-film/>
+
+**اجرای محلی:**
+
 ```sh
 npm install
 npm run dev
@@ -107,7 +111,12 @@ npm run shots        # تصاویر صحنه‌ها و چیدمان را در ar
 
 ## خروجی MP4
 
-اسکریپت زیر با Playwright و FFmpeg، تک‌تک فریم‌ها را همراه با صدای فارسی به MP4 تبدیل می‌کند. زمان لازم به توان گرافیکی دستگاه بستگی دارد:
+نسخهٔ آمادهٔ فیلم (رندر تک‌تک فریم‌ها با صدای فارسی) در **بخش انتشارها** است:
+
+- [فیلم کامل — ۱۹۲۰×۱۰۸۰، ۲۴fps، H.264 + AAC](https://github.com/RayanErfan/bright-minds-classroom-film/releases/download/v1.0.0/bright-minds-classroom-fa.mp4)
+- [نمونهٔ ۲۰ ثانیه‌ای — ۷۲۰p](https://github.com/RayanErfan/bright-minds-classroom-film/releases/download/v1.0.0/bright-minds-preview-720p.mp4)
+
+برای ساخت دوباره روی دستگاه خودتان:
 
 ```sh
 npm run render
