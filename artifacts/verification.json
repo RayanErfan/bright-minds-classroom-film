@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "chapters": 7,
+  "stats": {
+    "triangles": 542028,
+    "drawCalls": 425,
+    "geometries": 260,
+    "textures": 50,
+    "students": 12,
+    "workstations": 12,
+    "chapters": 7
+  },
+  "errors": [],
+  "date": "2026-11-10T16:50:45.444Z"
+}

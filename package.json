@@ -1,0 +1,14 @@
+{
+  "name": "bright-minds-classroom-film",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs --dist",
+    "test": "node scripts/verify.mjs",
+    "render": "node scripts/render.mjs"
+  },
+  "dependencies": { "three": "https://registry.npmjs.org/three/-/three-0.180.0.tgz" }
+}

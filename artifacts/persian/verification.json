@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "voices": [
+    "fa-IR-FaridNeural",
+    "fa-IR-DilaraNeural"
+  ],
+  "dialogueLines": 19,
+  "clock": {
+    "film": 0.426667,
+    "audio": 0.512,
+    "tracks": 1
+  },
+  "poses": {
+    "values": [
+      {
+        "student": 0.09500000000000569,
+        "teacher": 0,
+        "hand": 1.8625837037037025
+      },
+      {
+        "student": 0.680999999999985,
+        "teacher": 0,
+        "hand": 1.9
+      },
+      {
+        "student": 0.4235000000000051,
+        "teacher": 0,
+        "hand": 1.9
+      },
+      {
+        "student": 0.48399999999999904,
+        "teacher": 0,
+        "hand": 1.9
+      }
+    ],
+    "response": {
+      "student": 0,
+      "teacher": 0.6950000000000216
+    },
+    "closed": 0
+  },
+  "errors": []
+}

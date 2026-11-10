@@ -1,0 +1,12 @@
+import { cp, mkdir, rm } from 'node:fs/promises';
+import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..');
+const out=path.join(root,'dist');
+await rm(out,{recursive:true,force:true});
+await mkdir(path.join(out,'vendor/three'),{recursive:true});
+for(const name of ['index.html','src']) await cp(path.join(root,name),path.join(out,name),{recursive:true});
+await cp(path.join(root,'public'),out,{recursive:true});
+for(const name of ['three.module.js','three.core.js']) await cp(path.join(root,'node_modules/three/build',name),path.join(out,'vendor/three',name));
+await cp(path.join(root,'node_modules/three/examples/jsm'),path.join(out,'vendor/three/addons'),{recursive:true});
+await cp(path.join(root,'node_modules/three/LICENSE'),path.join(out,'vendor/three/LICENSE'));
+console.log('Built standalone film into dist/. Run npm run preview to watch.');

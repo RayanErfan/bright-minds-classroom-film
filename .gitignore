@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.voice-venv/
+artifacts/*.webm
+artifacts/*.mp4
+artifacts/*.png
+artifacts/*.zip
+artifacts/render.log
+public/audio/raw-*.mp3
+public/audio/line-*.wav
+public/audio/dialogue-fa.wav
+.DS_Store
+artifacts/**/*.png

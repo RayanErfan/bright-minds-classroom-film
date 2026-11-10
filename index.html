@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141615" />
+    <meta name="description" content="فیلم سه‌بعدی کلاس رایانه با گفت‌وگوی فارسی، آموزش قطعه‌های رایانه و تجربهٔ یادگیری در کنار هم." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>ذهن‌های روشن — فیلم کلاس رایانه</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="importmap">{"imports":{"three":"/vendor/three/three.module.js","three/addons/":"/vendor/three/addons/"}}</script>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <a class="brand" href="./" aria-label="خانهٔ ذهن‌های روشن"><span class="brand-mark">ذ<span>ر</span><i></i></span><span>ذهن‌های روشن<span class="brand-sub">فیلمی از کلاس رایانه</span></span></a>
+        <div class="project-meta"><span class="status-dot"></span> تجربهٔ یادگیری، در کنار هم <span class="meta-divider"></span><span class="mono">قسمت ۱ · ۱۴۰۵</span></div>
+        <button class="icon-button" id="info-button" title="دربارهٔ فیلم" aria-label="دربارهٔ فیلم"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></svg></button>
+      </header>
+      <main>
+        <section class="intro" aria-label="معرفی فیلم">
+          <div><div class="eyebrow"><span class="tiny-line"></span> آینده از همین کلاس آغاز می‌شود</div><h1>کشف‌های کوچک، <em>ذهن‌های روشن</em></h1></div>
+          <div class="intro-actions"><div class="mode-switch" role="group" aria-label="حالت دوربین"><button id="film-mode" class="active"><svg viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="12" rx="2"/><path d="M3 8h14M7 4v4m6-4v4"/></svg>تماشای فیلم</button><button id="explore-mode"><svg viewBox="0 0 20 20"><path d="m10 2 7 4v8l-7 4-7-4V6zM3 6l7 4 7-4m-7 4v8"/></svg>گشت‌وگذار سه‌بعدی</button></div><button class="export-button" id="export-button"><svg viewBox="0 0 20 20"><path d="M10 2v10m-4-4 4 4 4-4M3 12v5h14v-5"/></svg><span>دریافت فیلم</span></button></div>
+        </section>
+        <div class="workspace">
+          <section class="player" aria-label="فیلم پویانمایی کلاس رایانه">
+            <div class="viewport" id="viewport">
+              <canvas id="scene-canvas" aria-label="کلاس سه‌بعدی رایانه با یک معلم و دوازده دانش‌آموز"></canvas>
+              <div class="frame-vignette"></div><button id="start-with-voice" class="voice-start"><span class="voice-play">▶</span><span>پخش فیلم با صدای فارسی<small>صدای متفاوت معلم و دانش‌آموز</small></span></button>
+              <div class="frame-top"><span class="location-label"><span></span> آزمایشگاه یادگیری <b>·</b> کلاس ۲۰۴</span><span id="render-label" class="render-label">نمای سه‌بعدی <b> / </b> پخش زنده</span></div>
+              <div id="loading" class="loading"><div class="loading-icon"></div><span>کلاس در حال آماده شدن است…</span><small>تا چند لحظهٔ دیگر با هم یاد می‌گیریم</small></div>
+              <div class="film-title" id="film-title"><span>فیلمی دربارهٔ کنجکاوی</span><h2>هر ایدهٔ بزرگ<br>از جایی شروع می‌شود.</h2><div>به آزمایشگاه یادگیری خوش آمدید.</div></div>
+              <div class="scene-overlay"><div><span class="scene-number" id="scene-number">۰۱ / ۰۷</span><span class="scene-label" id="scene-label">جایی برای کشف کردن</span></div><span id="shot-label">نمای آغازین کلاس</span></div>
+              <div id="caption" class="caption" aria-live="off"></div>
+              <div class="explore-hint" id="explore-hint" hidden><span>برای چرخیدن، بکشید</span><i>·</i><span>برای نزدیک شدن، پیمایش کنید</span><button id="reset-camera">بازنشانی نما ↖</button></div>
+              <div class="export-progress" id="export-progress" hidden><span class="record-dot"></span><span id="export-status">در حال آماده‌سازی فیلم…</span><button id="cancel-export">لغو</button></div>
+            </div>
+            <div class="transport">
+              <div class="timeline-wrap"><input id="timeline" type="range" min="0" max="126" value="0" step="0.01" aria-label="نوار زمان فیلم"/><div class="timeline-markers" aria-hidden="true"></div></div>
+              <div class="transport-row"><div class="transport-left"><button class="play-button" id="play-button" aria-label="پخش فیلم"><svg viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z" fill="currentColor" stroke="none"/></svg></button><button class="icon-button" id="restart-button" aria-label="پخش از ابتدا" title="پخش از ابتدا"><svg viewBox="0 0 24 24"><path d="M4 9a8 8 0 1 1 0 7M4 3v6h6"/></svg></button><div class="timecode"><span id="current-time">۰۰:۰۰</span><span>/</span><span>۰۲:۰۶</span></div><span class="transport-divider"></span><span class="now-playing" id="now-playing">جایی برای کشف کردن</span></div><div class="transport-right"><button class="text-button" id="speed-button" aria-label="سرعت پخش">۱×</button><button class="icon-button" id="audio-button" aria-label="فعال‌کردن صدای فارسی" title="فعال‌کردن صدای فارسی"><svg viewBox="0 0 24 24"><path d="M11 4 6 8H3v8h3l5 4zM16 9l5 6m0-6-5 6"/></svg></button><button class="cc-button active" id="caption-button" aria-label="پنهان‌کردن زیرنویس" title="نمایش یا پنهان‌کردن زیرنویس" aria-pressed="true">زیرنویس</button><button class="icon-button" id="fullscreen-button" aria-label="نمایش تمام‌صفحه" title="تمام‌صفحه"><svg viewBox="0 0 24 24"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/></svg></button></div></div>
+            </div>
+          </section>
+          <aside class="scene-panel"><div class="panel-heading"><span>دربارهٔ این صحنه</span><span id="panel-index">۰۱ از ۰۷</span></div><div class="panel-main"><div class="scene-symbol" id="scene-symbol"></div><span class="eyebrow" id="panel-chapter">فصل اول</span><h2 id="panel-title">جایی برای<br>کشف کردن</h2><p id="panel-description">کلاسی روشن و مجهز؛ جایی که کنجکاوی، با کمک ابزارهای مناسب، به یادگیری تبدیل می‌شود.</p><div class="focus-block"><div class="eyebrow">در این صحنه می‌بینید</div><ul id="panel-focus"></ul></div></div><div class="panel-bottom"><span class="live-dot"></span><span>تمام جزئیات، در فضای سه‌بعدی</span><svg viewBox="0 0 20 20"><path d="M4 14 14 4M4 4h10v10"/></svg></div></aside>
+        </div>
+        <section class="chapters-section" aria-label="فصل‌های فیلم"><div class="section-heading"><h2>یک کلاس، <span>هفت لحظهٔ یادگیری</span></h2><span class="mono">داستان کلاس <span class="muted">/</span> ۰۲:۰۶</span></div><div id="chapters" class="chapters"></div></section>
+        <footer><span><span class="footer-star">✳</span> با کنجکاوی ساخته شده؛ برای یادگیری در کنار هم.</span><span class="footer-meta">۱۲ دانش‌آموز <i>·</i> ۱ معلم <i>·</i> فرصت‌های بی‌پایان</span></footer>
+      </main>
+      <dialog id="info-dialog"><button class="dialog-close icon-button" aria-label="بستن پنجره">×</button><div class="eyebrow">دربارهٔ فیلم</div><h2>یادگیری در کنار هم،<br>زیباتر است.</h2><p>در این فیلم دو دقیقه‌ای، همراه یک معلم و دوازده دانش‌آموز، از آشنایی با رایانه تا تمرین عملی پیش می‌رویم.</p><p>شخصیت‌ها با چهره‌های تازه، پلک‌زدن و حرکت دهان هماهنگ با گفتار جان گرفته‌اند. صدای معلم و دانش‌آموز، دو صدای مصنوعی متفاوت با لهجهٔ فارسی ایرانی هستند.</p><dl><div><dt>صحنه‌ها</dt><dd>۷ بخش سینمایی</dd></div><div><dt>زمان فیلم</dt><dd>۲ دقیقه و ۶ ثانیه</dd></div><div><dt>خروجی</dt><dd>ویدیوی ۱۰۸۰ با گفت‌وگوی فارسی و موسیقی</dd></div></dl><p class="dialog-note">کلید فاصله: پخش و مکث · کلیدهای جهت: جابه‌جایی ۵ ثانیه · F: تمام‌صفحه · M: صدا · C: زیرنویس. در حالت گشت‌وگذار می‌توانید دوربین را بچرخانید.</p><button class="dialog-done export-button">بازگشت به کلاس ↖</button></dialog>
+      <div id="toast" class="toast" role="status"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
